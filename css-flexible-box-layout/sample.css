@@ -1,0 +1,51 @@
+.A {
+    background-color: red;
+}
+.B {
+    background-color: green;
+}
+.C {
+    background-color: blue;
+}
+.A,.B,.C {
+    width: 100px;
+    height: 100px;	
+}
+
+.flex-container {
+	display: -webkit-flex;
+	display: flex;
+   	height: 280px;
+    padding: 1em;
+    background-color: gray;
+}
+
+.layout-row {
+    -webkit-flex-flow: row;
+    flex-flow: row;
+}
+
+.layout-row-reverse {
+    -webkit-flex-flow: row-reverse;
+    flex-flow: row-reverse;
+}
+
+.layout-column {
+    -webkit-flex-flow: column;
+    flex-flow: column;
+}
+
+.layout-column-reverse {
+    -webkit-flex-flow: column-reverse;
+    flex-flow: column-reverse;
+}
+
+.layout-column-wrap {
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+}
+
+.layout-column-reverse-wrap-reverse {
+    -webkit-flex-flow: column-reverse wrap-reverse;
+    flex-flow: column-reverse wrap-reverse;
+}
