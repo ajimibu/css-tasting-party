@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<title>CSS Values and Units Module Level 3</title>
+<meta charset=utf-8>
+
+<div class="box1">
+	<p>ボックス１</p>
+	<div class="box2" str="このボックスは">
+		ブラウザの幅によって高さが変わります
+	</div>
+</div>
+
+<style>
+.box2::before {
+	content: attr(str);
+}
+
+.box1{
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border: 1px solid #1b292d;
+
+    height: 50vw;
+}
+
+.box2{
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border: 1px solid #1b292d;
+    
+    font-size: 10vh;
+}
+
+
+</style>
