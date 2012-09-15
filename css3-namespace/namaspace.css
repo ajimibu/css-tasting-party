@@ -12,34 +12,6 @@
 @namespace "http://www.w3.org/1999/xhtml";
 /* svg 名前空間のimport(inline svg) */
 @namespace svg "http://www.w3.org/2000/svg";
-/*
-	宣言: @namespace <名前空間名> "URI";
-		   ※ <名前空間名>は省略可能
-	適用: CSS3
-	CSS 修飾名：
-		<name>|<要素>{...style...etc...}
-	1. 名前空間を使用したCSSでの記述
-		名前空間名に属する要素を示します。
-		<名前空間名>|<要素>{}
-		ex) svg|rect
-
-		名前空間を問わず、すべての C を表します。名前空間に属さないものも含みます。
-	2. 
-*/
-/* xhtmlでの例 - CSS namespace */
-xhtml|h1.abcd{
-	color:red;
-}
-|h1{
-	
-	color:green;
-}
-*|h1{
-	color:blue;
-}
-h1{
-	color:gray;
-}
 /* inline svg での例 */
 svg|rect{
 	fill:green;
@@ -60,4 +32,17 @@ svg|rect.sample02{
 rect{
 	fill:gray;
 }
-
+/* xhtmlでの例 - CSS namespace */
+xhtml|h1.abcd{
+	color:red;
+}
+|h1{
+	
+	color:green;
+}
+*|h1{
+	color:blue;
+}
+h1{
+	color:gray;
+}
