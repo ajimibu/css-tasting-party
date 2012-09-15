@@ -1,0 +1,63 @@
+/* Web先端技術 味見部 2012.09.15
+ * 「CSS味見会」
+ * 味見対象 : css3-namespace-module
+ * 担当 : 菅, 鬼灯
+ * @namaspace <name> "namespace uri";<name>は省略可能。
+ * Let's 仕様 & 実装 味見!!
+ * #ajimibu
+ * 
+ */
+/* xhtml 名前空間のimport */
+@namespace xhtml "http://www.w3.org/1999/xhtml";
+@namespace "http://www.w3.org/1999/xhtml";
+/* svg 名前空間のimport(inline svg) */
+@namespace svg "http://www.w3.org/2000/svg";
+/*
+	宣言: @namespace <名前空間名> "URI";
+		   ※ <名前空間名>は省略可能
+	適用: CSS3
+	CSS 修飾名：
+		<name>|<要素>{...style...etc...}
+	1. 名前空間を使用したCSSでの記述
+		名前空間名に属する要素を示します。
+		<名前空間名>|<要素>{}
+		ex) svg|rect
+
+		名前空間を問わず、すべての C を表します。名前空間に属さないものも含みます。
+	2. 
+*/
+/* xhtmlでの例 - CSS namespace */
+xhtml|h1.abcd{
+	color:red;
+}
+|h1{
+	
+	color:green;
+}
+*|h1{
+	color:blue;
+}
+h1{
+	color:gray;
+}
+/* inline svg での例 */
+svg|rect{
+	fill:green;
+	stroke:gray;
+	width:200;
+	height:100;
+	stroke-width:3;
+}
+svg|rect.sample01{
+	fill:red;
+}
+svg|rect.sample02{
+	fill:blue;
+}
+|rect{
+	fill:gray;
+}
+rect{
+	fill:gray;
+}
+
