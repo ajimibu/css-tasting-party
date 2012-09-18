@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<meta charset="UTF-8">
+<title>CSS Flexible Box Layout Module Demo</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
+<style>
+body {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.A {
+    background: red;
+    width: 140px;
+    height: 140px;
+    font-size: 100px;
+    line-height: 100px;
+}
+.B {
+    background: green;
+    width: 120px;
+    height: 120px;
+    font-size: 60px;
+    line-height: 60px;
+}
+.C {
+    background: blue;
+    width: 100px;
+    height: 100px;
+    font-size: 30px;
+    line-height: 30px;
+}
+.flex-item {
+    font-weight: bold;
+    color: white;
+}
+.flex-container {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    display: -ms-flex;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: gray;
+}
+.outer-container {
+    width: 480px;
+    height: 480px;
+}
+.prop-name {
+	padding-left: 10px;
+}
+.row {
+	font-size: 12pt;
+	line-height: 26pt;
+}
+input[type="text"] {
+	margin-bottom: auto;
+	width: auto;
+}
+</style>
+<script>
+var css_prefix = ['-webkit-', '-moz-', '-o-', '-ms-', ''];
+function set_css(target, key, value) {
+	var prop = {};
+	for (var i=0 ; i<css_prefix.length ; i++) {
+		prop[css_prefix[i] + key] = value;
+	}
+	$(target).css(prop);
+}
+function init_view() {
+	$('.btn-group > .btn').click(function(e){
+		var parentNode = $(this.parentNode);
+		var key = parentNode.data('prop');
+		var target = parentNode.data('target');
+		var value = $(this).text();
+		if (value.match(/^\(/))
+			value = '';
+		set_css(target, key, value);
+	});
+	$('.prop-text').keyup(function(e){
+		var thisNode = $(this);
+		var key = thisNode.data('prop');
+		var target = thisNode.data('target');
+		var value = thisNode.val();
+		set_css(target, key, value);
+	});
+	$(".ui-widget-content").resizable();
+}
+$(document).ready(function(){
+   init_view();
+});
+</script>
+<body>
+<h1>CSS Flexible Box Layout Module Demo</h1>
+<div>
+<a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120612/">CSS Flexbox layout</a> Demo by @tichi73
+</div>
+<div>
+update: 2012/09/17
+</div>
+
+<h2>Layout Demo</h2>
+<div class="outer-container ui-widget-content">
+	<div class="flex-container">
+		<div class="flex-item ui-widget-content A">A</div>
+		<div class="flex-item ui-widget-content B">B</div>
+		<div class="flex-item ui-widget-content C">C</div>
+	</div>
+</div>
+<br>
+<div class="alert">
+Tips: Container and items that are resizable.
+</div>
+
+<h2>Flex containers property</h2>
+<div class="row">
+<div class="span2 prop-name"><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120612/#flex-direction">flex-direction</a></div>
+<div class="span10">
+<span class="btn-group" data-prop="flex-direction" data-target=".flex-container" data-toggle="buttons-radio">
+	<button class="btn active">(none)</button>
+	<button class="btn btn-info">row</button>
+	<button class="btn">row-reverse</button>
+	<button class="btn">column</button>
+	<button class="btn">column-reverse</button>
+</span>
+</div>
+</div>
+
+<div class="row">
+<div class="span2 prop-name"><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120612/#flex-wrap">flex-wrap</a></div>
+<div class="span10">
+<span class="btn-group" data-prop="flex-wrap" data-target=".flex-container" data-toggle="buttons-radio">
+	<button class="btn active">(none)</button>
+	<button class="btn btn-info">nowrap</button>
+	<button class="btn">wrap</button>
+	<button class="btn">wrap-reverse</button>
+</span>
+</div>
+</div>
+
+<div class="row">
+<div class="span2 prop-name"><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120612/#justify-content">justify-content</a></div>
+<div class="span10">
+<span class="btn-group" data-prop="justify-content" data-target=".flex-container" data-toggle="buttons-radio">
+	<button class="btn active">(none)</button>
+	<button class="btn btn-info">flex-start</button>
+	<button class="btn">flex-end</button>
+	<button class="btn">center</button>
+	<button class="btn">space-between</button>
+	<button class="btn">space-around</button>
+</span>
+</div>
+</div>
+
+<div class="row">
+<div class="span2 prop-name"><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120612/#align-items">align-items</a></div>
+<div class="span10">
+<span class="btn-group" data-prop="align-items" data-target=".flex-container" data-toggle="buttons-radio">
+	<button class="btn active">(none)</button>
+	<button class="btn">flex-start</button>
+	<button class="btn">flex-end</button>
+	<button class="btn">center</button>
+	<button class="btn">baseline</button>
+	<button class="btn btn-info">stretch</button>
+</span>
+</div>
+</div>
+
+<h2>Flex items property</h2>
+<div class="row">
+<div class="span2 prop-name">(A) <a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120612/#align-self">align-self</a></div>
+<div class="span10">
+<span class="btn-group" data-prop="align-self" data-target=".A" data-toggle="buttons-radio">
+	<button class="btn active">(none)</button>
+	<button class="btn btn-info">auto</button>
+	<button class="btn">flex-start</button>
+	<button class="btn">flex-end</button>
+	<button class="btn">center</button>
+	<button class="btn">baseline</button>
+	<button class="btn">stretch</button>
+</span>
+<span class="prop-name"><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120612/#flex">flex</a></span>
+<input type="text" class="prop-text" size="8" value="none" data-prop="flex" data-target=".A"></input>
+<span class="prop-name"><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120612/#order">order</a></span>
+<input type="text" class="prop-text" size="2" value="0" data-prop="order" data-target=".A"></input>
+</div>
+</div>
+
+<div class="row">
+<div class="span2 prop-name">(B) <a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120612/#align-self">align-self</a></div>
+<div class="span10">
+<span class="btn-group" data-prop="align-self" data-target=".B" data-toggle="buttons-radio">
+	<button class="btn active">(none)</button>
+	<button class="btn btn-info">auto</button>
+	<button class="btn">flex-start</button>
+	<button class="btn">flex-end</button>
+	<button class="btn">center</button>
+	<button class="btn">baseline</button>
+	<button class="btn">stretch</button>
+</span>
+<span class="prop-name"><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120612/#flex">flex</a></span>
+<input type="text" class="prop-text" size="8" value="none" data-prop="flex" data-target=".B"></input>
+<span class="prop-name"><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120612/#order">order</a></span>
+<input type="text" class="prop-text" size="2" value="0" data-prop="order" data-target=".B"></input>
+</div>
+</div>
+
+<div class="row">
+<div class="span2 prop-name">(C) <a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120612/#align-self">align-self</a></div>
+<div class="span10">
+<span class="btn-group" data-prop="align-self" data-target=".C" data-toggle="buttons-radio">
+	<button class="btn active">(none)</button>
+	<button class="btn btn-info">auto</button>
+	<button class="btn">flex-start</button>
+	<button class="btn">flex-end</button>
+	<button class="btn">center</button>
+	<button class="btn">baseline</button>
+	<button class="btn">stretch</button>
+</span>
+<span class="prop-name"><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120612/#flex">flex</a></span>
+<input type="text" class="prop-text" size="8" value="none" data-prop="flex" data-target=".C"></input>
+<span class="prop-name"><a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120612/#order">order</a></span>
+<input type="text" class="prop-text" size="2" value="0" data-prop="order" data-target=".C"></input>
+</div>
+</div>
+
+</body>
+</html>
+
