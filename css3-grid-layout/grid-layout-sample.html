@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html lang="ja-JP">
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Grid Layout Sample</title>
+</head>
+<body>
+<style type="text/css">
+  #grid {
+    display: -ms-grid;
+    /*-ms-grid-columns: 100px 100px 100px;*/
+    /*-ms-grid-rows: 100px 100px 100px;*/
+
+    width: 900px;
+    height: 500px;
+    border: 5px solid #00A;
+    padding: 5px;
+
+    /*-ms-grid-columns: 25% 25% 25% 25%;*/
+    /*-ms-grid-rows: 25% 25% 25% 25%;*/
+
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr;
+
+  }
+  #grid > div {
+    padding: 5px;
+    border: 1px dotted #333;
+  }
+  #c1 {
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+  }
+  #c2 {
+    -ms-grid-column: 2;
+    -ms-grid-row: 1;
+  }
+  #c3 {
+    -ms-grid-column: 3;
+    -ms-grid-row: 1;
+  }
+  #c4 {
+    -ms-grid-column: 1;
+    -ms-grid-column-align: center;
+    -ms-grid-row: 2;
+    -ms-grid-row-align: center;
+  }
+  #c5 {
+    -ms-grid-column: 2;
+    -ms-grid-column-align: start;
+    -ms-grid-row: 2;
+    -ms-grid-row-align: start;
+  }
+  #c6 {
+    -ms-grid-column: 3;
+    -ms-grid-column-align: end;
+    -ms-grid-row: 2;
+    -ms-grid-row-align: end;
+  }
+  #c7 {
+    -ms-grid-column: 1;
+    -ms-grid-row: 3;
+  }
+  #c8 {
+    -ms-grid-column: 2;
+    -ms-grid-row: 3;
+  }
+  #c9 {
+    -ms-grid-column: 3;
+    -ms-grid-row: 3;
+  }
+  #c10 {
+    -ms-grid-column: 4;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 2;
+  }
+  #c11 {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    -ms-grid-row: 4;
+  }
+  #c12 {
+    -ms-grid-column: 3;
+    -ms-grid-row: 4;
+  }
+</style>
+<div id="grid">
+  <div id="c1">
+    <pre>
+-ms-grid-column: 1;
+-ms-grid-row: 1;
+    </pre>
+  </div>
+  <div id="c2">
+    <pre>
+-ms-grid-column: 2;
+-ms-grid-row: 1;
+    </pre>
+  </div>
+  <div id="c3">
+    <pre>
+-ms-grid-column: 3;
+-ms-grid-row: 1;
+    </pre>
+  </div>
+  <div id="c4">
+    <pre>
+-ms-grid-column: 1;
+-ms-grid-column-align: center;
+-ms-grid-row: 2;
+-ms-grid-row-align: center;
+    </pre>
+  </div>
+  <div id="c5">
+    <pre>
+-ms-grid-column: 2;
+-ms-grid-column-align: start;
+-ms-grid-row: 2;
+-ms-grid-row-align: start;
+    </pre>
+  </div>
+  <div id="c6">
+    <pre>
+-ms-grid-column: 3;
+-ms-grid-column-align: end;
+-ms-grid-row: 2;
+-ms-grid-row-align: end;
+    </pre>
+  </div>
+  <div id="c7">
+    <pre>
+-ms-grid-column: 1;
+-ms-grid-row: 3;
+    </pre>
+  </div>
+  <div id="c8">
+    <pre>
+-ms-grid-column: 2;
+-ms-grid-row: 3;
+    </pre>
+  </div>
+  <div id="c9">
+    <pre>
+-ms-grid-column: 3;
+-ms-grid-row: 3;
+    </pre>
+  </div>
+  <div id="c10">
+    <pre>
+-ms-grid-column: 4;
+-ms-grid-row: 3;
+-ms-grid-row-span: 2;
+    </pre>
+  </div>
+  <div id="c11">
+    <pre>
+-ms-grid-column: 1;
+-ms-grid-column-span: 2;
+-ms-grid-row: 4;
+    </pre>
+  </div>
+  <div id="c12">
+    <pre>
+-ms-grid-column: 3;
+-ms-grid-row: 4;
+    </pre>
+  </div>
+</div>
+
+</body>
+</html>
