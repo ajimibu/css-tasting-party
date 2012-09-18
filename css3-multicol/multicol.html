@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<head id="header">
+<style>
+div.column {
+columns : 5 100px;
+column-fill : balance;
+column-gap: 1em;
+column-rule : thin solid red;
+-webkit-columns : 5 100px;
+-webkit-column-fill : balance;
+-webkit-column-gap: 1em;
+-webkit-column-rule : thin solid red;
+-moz-columns : 5 100px;
+-moz-column-fill : balance;
+-moz-column-gap: 1em;
+-moz-column-rule : thin solid red;
+-o-columns : 5 100px;
+-o-column-fill : balance;
+-o-column-gap: 1em;
+-o-column-rule : thin solid red;
+
+}
+div.column h5 {
+background-color : blue;
+column-span : all;
+-webkit-column-span : all;
+-moz-column-span : all;
+-o-column-span : all;
+}
+</style>
+<title>マルチカラムレイアウトサンプル</title>
+</head>
+<body>
+<div class="column">
+<p>
+ひどく寒い日でした。 雪も降っており、すっかり暗くなり、もう夜 ―― 今年さいごの夜でした。 この寒さと暗闇の中、一人のあわれな少女が道を歩いておりました。 頭に何もかぶらず、足に何もはいていません。 家を出るときには靴をはいていました。 ええ、確かにはいていたんです。 でも、靴は何の役にも立ちませんでした。 それはとても大きな靴で、 これまで少女のお母さんがはいていたものでした。 大層大きい靴でした。 かわいそうに、道を大急ぎで渡ったとき、少女はその靴をなくしてしまいました。 二台の馬車が猛スピードで走ってきたからです。
+</p>
+<h5>明日からは連休だ 明日からは連休だ 明日からは連休だ 明日からは連休だ 明日からは連休だ 明日からは連休だ 明日からは連休だ 明日からは連休だ column-span:all</h5>
+<p>
+ひどく寒い日でした。 雪も降っており、すっかり暗くなり、もう夜 ―― 今年さいごの夜でした。 この寒さと暗闇の中、一人のあわれな少女が道を歩いておりました。 頭に何もかぶらず、足に何もはいていません。 家を出るときには靴をはいていました。 ええ、確かにはいていたんです。 でも、靴は何の役にも立ちませんでした。 それはとても大きな靴で、 これまで少女のお母さんがはいていたものでした。 大層大きい靴でした。 かわいそうに、道を大急ぎで渡ったとき、少女はその靴をなくしてしまいました。 二台の馬車が猛スピードで走ってきたからです。
+</p>
+</div>
+<p>ベンダープリフィックスは必要</p>
+<ul>
+<li>column-width : カラムの幅</li>
+<li>column-count : カラムの数を指定</li>
+<li>columns : まとめ可能 表示される方が優先</li>
+</ul>
+<ul>
+<li>column-gap : カラム内のマージン</li>
+</ul>
+<ul>
+<li>column-rule-width : 線の太さ</li>
+<li>column-rule-style : 線のタイプ</li>
+<li>column-rule-color : 線の色</li>
+<li>column-rule : まとめ可能 カラムの間に線を引く</li>
+</ul>
+<ul>
+<li>column-span : カラムにまたがって表示させる</li>
+</ul>
+<a href="http://thinkit.co.jp/story/2012/04/12/3515?page=0,2">参照元：Think it</a>
