@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>example1</title>
+<style>
+:root { -webkit-var-color: blue;}
+div {-webkit-var-color: green;}
+#alert {-webkit-var-color: red;}
+* {color: -webkit-var(color);}
+</style>
+</head>
+<body>
+<p>I inherited blue from the root element!</p>
+<div>I got green set directly on me!</div>
+<div id='alert'>
+  While I got red set directly on me!
+  <p>I'm red too, because of inheritance!</p>
+</div>
+</body>
+</html>
